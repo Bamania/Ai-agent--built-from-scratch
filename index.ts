@@ -18,8 +18,14 @@ const messages = await getMessages();
 console.log(userMessage);
 
 const weatherTool = {
-  name: "getWeather",
-  description: "Get the weather of a city",
-  parameters: z.object({}),
-};
-const response = await runAgent({ userMessage, tools: [weatherTool] });
+  type: "function",
+  name: 'get_weather',
+  description: `use this to get the weather`,
+  parameters: z.object({
+    reasoning: z.string().describe('why did you pick this tool?'),
+  }),
+}
+
+ await runAgent({ userMessage, tools: [weatherTool] })
+
+
