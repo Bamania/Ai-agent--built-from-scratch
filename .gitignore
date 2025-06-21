@@ -1,0 +1,7 @@
+node_modules
+.env
+
+
+chat.txt
+chat_formatted.txt
+format_chat.js
