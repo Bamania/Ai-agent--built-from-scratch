@@ -3,6 +3,7 @@
 import type OpenAI from 'openai'
 import { readChatFile } from './tools/readChatTool';
 import { getWeather } from './tools/getWeather';
+import { dadJoke } from './tools/DadJokeGen';
 
 // one tool function working 
 
@@ -22,6 +23,8 @@ export const runTool = async (
 	    return getWeather(input)
     case "read_chat_file":
       return readChatFile()
+    case "dad_joke":
+      return dadJoke(input)
     default:
       throw new Error(`Unknown tool: ${toolCall.function.name}`)
   }
