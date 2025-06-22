@@ -1,0 +1,134 @@
+{
+  "experiments": [
+    {
+      "name": "reddit",
+      "sets": [
+        {
+          "runs": [
+            {
+              "input": "tell me something cool from reddit",
+              "output": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "function": {
+                      "arguments": "{}",
+                      "name": "reddit_posts"
+                    },
+                    "id": "51925a64-4dc5-44f7-89f5-c5e7729a509c",
+                    "type": "function"
+                  }
+                ]
+              },
+              "expected": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "reddit_posts"
+                    }
+                  }
+                ]
+              },
+              "scores": [
+                {
+                  "name": "ToolCallMatch",
+                  "score": 1
+                }
+              ],
+              "createdAt": "2025-06-22T20:09:36.087Z"
+            }
+          ],
+          "score": 1,
+          "createdAt": "2025-06-22T20:09:36.087Z"
+        }
+      ]
+    },
+    {
+      "name": "read_chat_file",
+      "sets": [
+        {
+          "runs": [
+            {
+              "input": "tell me something cool from reddit",
+              "output": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "function": {
+                      "arguments": "{}",
+                      "name": "reddit_posts"
+                    },
+                    "id": "5812a9a4-6584-4544-a1fd-02ea842bbcb2",
+                    "type": "function"
+                  }
+                ]
+              },
+              "expected": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "read_chat_file"
+                    }
+                  }
+                ]
+              },
+              "scores": [
+                {
+                  "name": "ToolCallMatch",
+                  "score": 0
+                }
+              ],
+              "createdAt": "2025-06-22T20:59:16.461Z"
+            }
+          ],
+          "score": 0,
+          "createdAt": "2025-06-22T20:59:16.461Z"
+        },
+        {
+          "runs": [
+            {
+              "input": "who is riya talking to?",
+              "output": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "function": {
+                      "arguments": "{}",
+                      "name": "read_chat_file"
+                    },
+                    "id": "13a4a3dd-4b68-4b05-831e-c15b9476301a",
+                    "type": "function"
+                  }
+                ]
+              },
+              "expected": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "read_chat_file"
+                    }
+                  }
+                ]
+              },
+              "scores": [
+                {
+                  "name": "ToolCallMatch",
+                  "score": 1
+                }
+              ],
+              "createdAt": "2025-06-22T21:00:21.173Z"
+            }
+          ],
+          "score": 1,
+          "createdAt": "2025-06-22T21:00:21.173Z"
+        }
+      ]
+    }
+  ]
+}

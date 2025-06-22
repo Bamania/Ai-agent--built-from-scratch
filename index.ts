@@ -4,6 +4,8 @@ import { runAgent } from "./src/agent";
 import { z } from "zod";
 import { weatherToolDefinition } from "./src/tools/getWeather";
 import { readChatToolDefinition } from "./src/tools/readChatTool";
+import { dadJokeToolDefinition } from "./src/tools/DadJokeGen";
+import { redditToolDefinition } from "./src/tools/reddit";
 config();
 const userMessage = process.argv[2];
 // Now you can access environment variables
@@ -19,6 +21,6 @@ const messages = await getMessages();
 
 console.log(userMessage);
 
- await runAgent({ userMessage, tools: [weatherToolDefinition,readChatToolDefinition] })
+ await runAgent({ userMessage, tools: [weatherToolDefinition, readChatToolDefinition, dadJokeToolDefinition, redditToolDefinition] })
 
 
