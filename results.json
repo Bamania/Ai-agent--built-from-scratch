@@ -127,6 +127,150 @@
           ],
           "score": 1,
           "createdAt": "2025-06-22T21:00:21.173Z"
+        },
+        {
+          "runs": [
+            {
+              "input": "who is riya talking to?",
+              "output": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "function": {
+                      "arguments": "{}",
+                      "name": "read_chat_file"
+                    },
+                    "id": "9777f3c6-2507-4893-baa2-0aa7036fe9ec",
+                    "type": "function"
+                  }
+                ]
+              },
+              "expected": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "read_chat_file"
+                    }
+                  }
+                ]
+              },
+              "scores": [
+                {
+                  "name": "ToolCallMatch",
+                  "score": 1
+                }
+              ],
+              "createdAt": "2025-06-23T06:54:03.720Z"
+            }
+          ],
+          "score": 1,
+          "createdAt": "2025-06-23T06:54:03.720Z"
+        }
+      ]
+    },
+    {
+      "name": "reddit_posts",
+      "sets": [
+        {
+          "runs": [
+            {
+              "input": "tell me something cool from reddit",
+              "output": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "function": {
+                      "arguments": "{}",
+                      "name": "reddit_posts"
+                    },
+                    "id": "40c003a2-bf91-4809-9476-a35a8a20a001",
+                    "type": "function"
+                  }
+                ]
+              },
+              "expected": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "reddit_posts"
+                    }
+                  }
+                ]
+              },
+              "scores": [
+                {
+                  "name": "ToolCallMatch",
+                  "score": 1
+                }
+              ],
+              "createdAt": "2025-06-23T06:54:43.090Z"
+            },
+            {
+              "input": "tell me something cool from google",
+              "output": {
+                "content": "I'm sorry, but I cannot tell you something cool from Google directly. My capabilities are limited to analyzing chat files, providing weather information, generating dad jokes, and fetching Reddit posts.\n\nIs there anything else I can help you with using my current tools? For example, I could tell you a dad joke, or fetch some NBA news from Reddit!",
+                "role": "assistant"
+              },
+              "expected": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "reddit_posts"
+                    }
+                  }
+                ]
+              },
+              "scores": [
+                {
+                  "name": "ToolCallMatch",
+                  "score": 0
+                }
+              ],
+              "createdAt": "2025-06-23T06:54:43.090Z"
+            },
+            {
+              "input": "tell me something cool ",
+              "output": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "function": {
+                      "arguments": "{}",
+                      "name": "reddit_posts"
+                    },
+                    "id": "1755846a-dc60-4412-af04-c6b79f900c70",
+                    "type": "function"
+                  }
+                ]
+              },
+              "expected": {
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "reddit_posts"
+                    }
+                  }
+                ]
+              },
+              "scores": [
+                {
+                  "name": "ToolCallMatch",
+                  "score": 1
+                }
+              ],
+              "createdAt": "2025-06-23T06:54:43.090Z"
+            }
+          ],
+          "score": 0.6666666666666666,
+          "createdAt": "2025-06-23T06:54:43.090Z"
         }
       ]
     }
