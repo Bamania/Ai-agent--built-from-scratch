@@ -5,6 +5,7 @@ import { readChatFile } from './tools/readChatTool';
 import { getWeather } from './tools/getWeather';
 import { dadJoke } from './tools/DadJokeGen';
 import { reddit } from './tools/reddit';
+import { searchChatHistory } from './tools/chatQueryTool';
 
 // one tool function working 
 
@@ -21,13 +22,15 @@ export const runTool = async (
 //   this is how we makes sure how to run things that i want and has the right arguments 
   switch (toolCall.function.name) {
     case 'get_weather':
-	    return getWeather(input)
-    case "read_chat_file":
-      return readChatFile()
+        return getWeather(input)
+      // case "read_chat_file":
+      //   return readChatFile()
       case "dad_joke":
         return dadJoke(input)
     case "reddit_posts":
       return reddit(input)
+    case "search_chat_history":
+      return searchChatHistory(input.toolArgs)
     default:
       throw new Error(`Unknown tool: ${toolCall.function.name}`)
   }

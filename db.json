@@ -52,6 +52,30 @@
       "role": "assistant",
       "id": "8c941a0b-ef05-4e68-8153-b7ad855d38f4",
       "createdAt": "2025-06-22T19:44:42.768Z"
+    },
+    {
+      "role": "user",
+      "content": "hi",
+      "id": "d8c9dfb5-7f79-4c25-aa4e-f21db8da0fde",
+      "createdAt": "2025-06-23T20:00:54.147Z"
+    },
+    {
+      "content": "Hello! How can I help you today? I can assist you with:\n\n*   **Analyzing chat conversations** (if you have a chat file)\n*   **Getting current weather information** for any location\n*   **Generating dad jokes**\n*   **Fetching the latest NBA posts from Reddit**\n\nWhat would you like to do?",
+      "role": "assistant",
+      "id": "97310496-454e-47c3-9053-d7b3e89a0aa7",
+      "createdAt": "2025-06-23T20:00:57.537Z"
+    },
+    {
+      "role": "user",
+      "content": "does riya love me?",
+      "id": "a9377f95-4348-495d-a9f3-030db476cb05",
+      "createdAt": "2025-06-23T20:01:17.693Z"
+    },
+    {
+      "content": "As an AI, I cannot answer personal questions about feelings or relationships, as I don't have access to personal information or the ability to understand human emotions. My purpose is to assist with tasks like analyzing chat files, providing weather updates, telling jokes, or fetching Reddit posts.\n\nIs there anything else I can help you with that's within my capabilities?",
+      "role": "assistant",
+      "id": "0e3181c6-8a09-4ea0-bad0-e13e49cc9a67",
+      "createdAt": "2025-06-23T20:01:21.310Z"
     }
   ]
 }
