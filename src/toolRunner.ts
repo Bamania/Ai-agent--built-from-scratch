@@ -21,14 +21,14 @@ export const runTool = async (
   }
 //   this is how we makes sure how to run things that i want and has the right arguments 
   switch (toolCall.function.name) {
-    case 'get_weather':
-        return getWeather(input)
+    // case 'get_weather':
+    //     return getWeather(input)
       // case "read_chat_file":
       //   return readChatFile()
-      case "dad_joke":
-        return dadJoke(input)
-    case "reddit_posts":
-      return reddit(input)
+      // case "dad_joke":
+      //   return dadJoke(input)
+    // case "reddit_posts":
+    //   return reddit(input)
     case "search_chat_history":
       return searchChatHistory(input.toolArgs)
     default:

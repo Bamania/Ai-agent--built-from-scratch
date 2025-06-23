@@ -2,18 +2,6 @@ import 'dotenv/config';
 import { Pinecone } from '@pinecone-database/pinecone';
 import ora from 'ora';
 
-// Get query from command line arguments
-const query = process.argv[2];
-if (!query) {
-  console.error("❌ Please provide a query: `npm run query-pinecone \"your search text here\"`");
-  console.error("📖 Example: npm run query-pinecone \"hello world\" 10");
-  console.error("   The second parameter (10) is optional and sets the number of results");
-  process.exit(1);
-}
-
-// Optional parameters
-const topK = parseInt(process.argv[3]) || 5;
-
 const pinecone = new Pinecone({
   apiKey: process.env.PINECONE_API_KEY!,
 });
@@ -50,6 +38,18 @@ async function getQueryEmbedding(text: string): Promise<number[]> {
 }
 
 async function queryPinecone() {
+  // Get query from command line arguments
+  const query = process.argv[2];
+  if (!query) {
+    console.error("❌ Please provide a query: `npm run query-pinecone \"your search text here\"`");
+    console.error("📖 Example: npm run query-pinecone \"hello world\" 10");
+    console.error("   The second parameter (10) is optional and sets the number of results");
+    process.exit(1);
+  }
+
+  // Optional parameters
+  const topK = parseInt(process.argv[3]) || 5;
+
   const spinner = ora('🔍 Searching your chat history...').start();
   
   try {
@@ -155,5 +155,7 @@ export async function queryDatabase(searchQuery: string, numResults: number = 5)
   }
 }
 
-// Run the query if this file is executed directly
-queryPinecone().catch(console.error);
+// Only run the CLI query if this file is executed directly (not imported)
+if (import.meta.url === new URL(process.argv[1], 'file:').href) {
+  queryPinecone().catch(console.error);
+}

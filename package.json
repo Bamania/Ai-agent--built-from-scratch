@@ -5,11 +5,10 @@
   "scripts": {
     "start": "npx tsx index.ts",
     "eval": "npx tsx evals/run.ts $1",
-    "ingest": "npx tsx src/rag/ingest.ts",
+
     "ingest-pinecone": "npx tsx src/rag/ingestpine.ts",
     "query-pinecone": "npx tsx src/rag/query.ts",
-    "search": "npx tsx src/rag/query.ts",
-    "querytwo": "npx tsx src/rag/queryChat.ts",
+    
     "wpparse": "npx tsx parse_Chat_to_csv.ts"
   },
   "keywords": [],

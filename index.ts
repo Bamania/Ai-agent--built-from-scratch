@@ -22,6 +22,6 @@ const messages = await getMessages();
 
 console.log(userMessage);
 
- await runAgent({ userMessage, tools: [weatherToolDefinition, chatQueryToolDefinition, dadJokeToolDefinition, redditToolDefinition] })
+ await runAgent({ userMessage, tools: [ chatQueryToolDefinition] })
 
 

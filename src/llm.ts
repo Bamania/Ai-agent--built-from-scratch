@@ -6,13 +6,21 @@ import { systemPrompt } from "./systemPrompt";
 
 export const runLLM=async({messages,tools}:{messages:AIMessage[],tools:any[]})=>{
     
-    const formattedTools=tools.map(zodFunction)
+    // Handle both zod and regular tool definitions
+    const formattedTools = tools.map(tool => {
+        // If tool has parameters as zod object, use zodFunction
+        if (tool.parameters && typeof tool.parameters.parse === 'function') {
+            return zodFunction(tool);
+        }
+        // If tool is already in OpenAI format, use as is
+        return tool;
+    });
     
     const response = await openai.chat.completions.create({
         model: 'gemini-2.5-flash',
         temperature: 0.1,
         messages: [{role: "system", content: systemPrompt}, ...messages],
-        tools:formattedTools,
+        tools: formattedTools,
         tool_choice:"auto", //give the  llm power to choose the tool on its use
         parallel_tool_calls:false, //dont call the tools in parallel
         // max_tokens:1000 this lets you control the length of the response ! 
